@@ -34,7 +34,6 @@ const Timer = () => {
       setIsRunning(false);
       setHasStarted(false);
 
-      
       setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
 
       if (mode === "pomodoro") {
@@ -153,10 +152,9 @@ const Timer = () => {
 
       </div>
 
-      
       <div className="flex items-center gap-4">
 
-        
+        {/* ✅ FIXED BUTTON */}
         <button
           onClick={() => {
             setTimeLeft(modes[mode]);
@@ -166,12 +164,15 @@ const Timer = () => {
           className="h-12 w-12 flex items-center justify-center border-4 border-black border-double rounded-full"
         >
           <RotateCcw size={20} />
+        </button>
+
         <button
           onClick={handleToggle}
           className="px-8 py-3 rounded-full border-4 border-black border-double bg-black text-white font-bold"
         >
           {hasStarted ? (isRunning ? "Pause" : "Resume") : "Start"}
         </button>
+
         <button
           onClick={handleSkip}
           className="h-12 w-12 flex items-center justify-center border-4 border-black border-double rounded-full"
